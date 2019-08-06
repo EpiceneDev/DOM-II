@@ -54,12 +54,12 @@ lSwitch.addEventListener("click", function() {
     pHeader.style.background = "black";
   } else if (pBody.style.color == "white") {
     // body
-    pBody.style.color = "yellow";
-    pBody.style.background = "darkgreen";
+    pBody.style.color = "#caa5d1";
+    pBody.style.background = "purple";
     //header
-    pLink.forEach(elem => (elem.style.color = "yellow"));
-    pHeader.style.color = "yellow";
-    pHeader.style.background = "darkgreen";
+    pLink.forEach(elem => (elem.style.color = "#caa5d1"));
+    pHeader.style.color = "#caa5d1";
+    pHeader.style.background = "purple";
   } else {
     // body
     pBody.style.color = "black";
@@ -67,7 +67,7 @@ lSwitch.addEventListener("click", function() {
     //header
     pLink.forEach(elem => (elem.style.color = "black"));
         // TweenLite.to(pHeader, 3, { color: "black" });  //<== Animation!
-    //pHeader.style.color = 'black'
+    pHeader.style.color = 'black'
     pHeader.style.background = "white";
   }
 });
@@ -115,15 +115,17 @@ document
     document.querySelector(".inverse-content").style.justifyContent = "center";
   });
 
-// CLICK ALERT when right click (mouse menu) on body   V<<Uncomment below to use. 
+      //USED prevent.default to stop entire context menu.
+//// CLICK ALERT when right click (mouse menu) on body...Uncomment below to use (prevents Showing menu) 
 // pBody.addEventListener("contextmenu", function() {
 //   alert("A user interface is like a joke: If you have to explain it, it isn't that good.");
 //   event.preventDefault();
 // });
 
+//// Change button colors when clicked. **Click
 let buttons = Array.from(document.querySelectorAll(".content-pick .destination .btn"));
 //console.log("buttons: ", buttons)
-
+//// NOTE: Tried to addEventListener onto the array and stop propagation but not successful.
 buttons[0].addEventListener("click", (e => {e.target.style.backgroundColor = "yellow"; }));
 buttons[1].addEventListener("click", (e => {e.target.style.backgroundColor = "lavender"; }));
 buttons[2].addEventListener("click", (e => {e.target.style.backgroundColor = "pink"; }));
