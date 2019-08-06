@@ -71,7 +71,7 @@ lSwitch.addEventListener("click", function() {
     pHeader.style.background = "white";
   }
 });
-//// Hide/Display text on **mouseover, **mouseout
+//// HIDE/DISPLAY TEXT on **mouseover, **mouseout
 //     Hide the text content and centering the pic
 document.querySelector(".content-section .text-content").style.display = "none";
 document.querySelector(".content-section").style.justifyContent = "center";
@@ -112,4 +112,8 @@ document
     document.querySelector(".inverse-content").style.justifyContent = "center";
   });
 
-
+// CLICK ALERT when right click (mouse menu) on body
+pBody.addEventListener("contextmenu", function() {
+  alert("What is tiny and washes up on the shore continuously? Microwaves!");
+  event.preventDefault();
+});
