@@ -75,6 +75,7 @@ lSwitch.addEventListener("click", function() {
 //     Hide the text content and centering the pic
 document.querySelector(".content-section .text-content").style.display = "none";
 document.querySelector(".content-section").style.justifyContent = "center";
+
 //     Show content on **mouseover
 document
   .querySelector(".content-section")
@@ -84,7 +85,7 @@ document
     document.querySelector(".content-section").style.justifyContent =
       "space-between";
   });
-//     Hide the text content and centering the pic
+//     Hide the text content and centering the pic **mouseout
 document
   .querySelector(".content-section")
   .addEventListener("mouseout", function() {
@@ -92,10 +93,11 @@ document
       "none";
     document.querySelector(".content-section").style.justifyContent = "center";
   });
-//     Show content on **mouseover
+
 document.querySelector(".inverse-content .text-content").style.display = "none";
 document.querySelector(".inverse-content").style.justifyContent = "center";
-//     Hide the text content and centering the pic
+
+//     Show content on **mouseover
 document
   .querySelector(".inverse-content")
   .addEventListener("mouseover", function() {
@@ -104,6 +106,7 @@ document
     document.querySelector(".inverse-content").style.justifyContent =
       "space-between";
   });
+  //     Hide the text content and centering the pic **mouseout
 document
   .querySelector(".inverse-content")
   .addEventListener("mouseout", function() {
@@ -112,8 +115,15 @@ document
     document.querySelector(".inverse-content").style.justifyContent = "center";
   });
 
-// CLICK ALERT when right click (mouse menu) on body
-pBody.addEventListener("contextmenu", function() {
-  alert("What is tiny and washes up on the shore continuously? Microwaves!");
-  event.preventDefault();
-});
+// CLICK ALERT when right click (mouse menu) on body   V<<Uncomment below to use. 
+// pBody.addEventListener("contextmenu", function() {
+//   alert("A user interface is like a joke: If you have to explain it, it isn't that good.");
+//   event.preventDefault();
+// });
+
+let buttons = Array.from(document.querySelectorAll(".content-pick .destination .btn"));
+//console.log("buttons: ", buttons)
+
+buttons[0].addEventListener("click", (e => {e.target.style.backgroundColor = "yellow"; }));
+buttons[1].addEventListener("click", (e => {e.target.style.backgroundColor = "lavender"; }));
+buttons[2].addEventListener("click", (e => {e.target.style.backgroundColor = "pink"; }));
