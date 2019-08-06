@@ -32,17 +32,17 @@ function incMargin() {
   funBus.style.color = "#AAAA00";
 }
 
+/// DARK MODE / LIGHT MODE / COLORED MODE
 /// Create the last button in Nav for document color scheme
-let pBody = document.querySelector("body");
 let lSwitch = document.createElement("button");
 lSwitch.textContent = "🎨";
 document.querySelector(".nav").append(lSwitch);
- 
+
+let pBody = document.querySelector("body");
 let pHeader = document.querySelector("header");
 let pLink = document.querySelectorAll("a");
 
-//*************************************** */
-//// DARK MODE / LIGHT MODE / COLORED MODE
+
 lSwitch.addEventListener("click", function() {
   if (pBody.style.color == "black") {
     // body
@@ -53,6 +53,7 @@ lSwitch.addEventListener("click", function() {
     pHeader.style.color = "white";
     pHeader.style.background = "black";
   } else if (pBody.style.color == "white") {
+    // body
     pBody.style.color = "yellow";
     pBody.style.background = "darkgreen";
     //header
@@ -60,11 +61,12 @@ lSwitch.addEventListener("click", function() {
     pHeader.style.color = "yellow";
     pHeader.style.background = "darkgreen";
   } else {
+    // body
     pBody.style.color = "black";
     pBody.style.background = "white";
     //header
     pLink.forEach(elem => (elem.style.color = "black"));
-    TweenLite.to(pHeader, 3, { color: "black" });
+        // TweenLite.to(pHeader, 3, { color: "black" });  //<== Animation!
     //pHeader.style.color = 'black'
     pHeader.style.background = "white";
   }
