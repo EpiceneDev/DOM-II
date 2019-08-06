@@ -32,3 +32,78 @@ function incMargin() {
   funBus.style.color = "#AAAA00";
 }
 
+/// Create the last button in Nav for document color scheme
+let pBody = document.querySelector("body");
+let lSwitch = document.createElement("button");
+lSwitch.textContent = "🎨";
+document.querySelector(".nav").append(lSwitch);
+ 
+let pHeader = document.querySelector("header");
+let pLink = document.querySelectorAll("a");
+
+//*************************************** */
+//// DARK MODE / LIGHT MODE / COLORED MODE
+lSwitch.addEventListener("click", function() {
+  if (pBody.style.color == "black") {
+    // body
+    pBody.style.color = "white";
+    pBody.style.background = "black";
+    //header
+    pLink.forEach(elem => (elem.style.color = "white"));
+    pHeader.style.color = "white";
+    pHeader.style.background = "black";
+  } else if (pBody.style.color == "white") {
+    pBody.style.color = "yellow";
+    pBody.style.background = "darkgreen";
+    //header
+    pLink.forEach(elem => (elem.style.color = "yellow"));
+    pHeader.style.color = "yellow";
+    pHeader.style.background = "darkgreen";
+  } else {
+    pBody.style.color = "black";
+    pBody.style.background = "white";
+    //header
+    pLink.forEach(elem => (elem.style.color = "black"));
+    TweenLite.to(pHeader, 3, { color: "black" });
+    //pHeader.style.color = 'black'
+    pHeader.style.background = "white";
+  }
+});
+//*** DarkMode ****//
+document.querySelector(".content-section .text-content").style.display = "none";
+document.querySelector(".content-section").style.justifyContent = "center";
+document
+  .querySelector(".content-section")
+  .addEventListener("mouseover", function() {
+    document.querySelector(".content-section .text-content").style.display =
+      "inline-block";
+    document.querySelector(".content-section").style.justifyContent =
+      "space-between";
+  });
+document
+  .querySelector(".content-section")
+  .addEventListener("mouseout", function() {
+    document.querySelector(".content-section .text-content").style.display =
+      "none";
+    document.querySelector(".content-section").style.justifyContent = "center";
+  });
+
+document.querySelector(".inverse-content .text-content").style.display = "none";
+document.querySelector(".inverse-content").style.justifyContent = "center";
+document
+  .querySelector(".inverse-content")
+  .addEventListener("mouseover", function() {
+    document.querySelector(".inverse-content .text-content").style.display =
+      "inline-block";
+    document.querySelector(".inverse-content").style.justifyContent =
+      "space-between";
+  });
+document
+  .querySelector(".inverse-content")
+  .addEventListener("mouseout", function() {
+    document.querySelector(".inverse-content .text-content").style.display =
+      "none";
+    document.querySelector(".inverse-content").style.justifyContent = "center";
+  });
+
+
