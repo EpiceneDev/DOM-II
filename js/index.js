@@ -42,7 +42,7 @@ let pBody = document.querySelector("body");
 let pHeader = document.querySelector("header");
 let pLink = document.querySelectorAll("a");
 
-
+/// Switch the colors in body and nav **click
 lSwitch.addEventListener("click", function() {
   if (pBody.style.color == "black") {
     // body
@@ -71,9 +71,11 @@ lSwitch.addEventListener("click", function() {
     pHeader.style.background = "white";
   }
 });
-//*** DarkMode ****//
+//// Hide/Display text on **mouseover, **mouseout
+//     Hide the text content and centering the pic
 document.querySelector(".content-section .text-content").style.display = "none";
 document.querySelector(".content-section").style.justifyContent = "center";
+//     Show content on **mouseover
 document
   .querySelector(".content-section")
   .addEventListener("mouseover", function() {
@@ -82,6 +84,7 @@ document
     document.querySelector(".content-section").style.justifyContent =
       "space-between";
   });
+//     Hide the text content and centering the pic
 document
   .querySelector(".content-section")
   .addEventListener("mouseout", function() {
@@ -89,9 +92,10 @@ document
       "none";
     document.querySelector(".content-section").style.justifyContent = "center";
   });
-
+//     Show content on **mouseover
 document.querySelector(".inverse-content .text-content").style.display = "none";
 document.querySelector(".inverse-content").style.justifyContent = "center";
+//     Hide the text content and centering the pic
 document
   .querySelector(".inverse-content")
   .addEventListener("mouseover", function() {
